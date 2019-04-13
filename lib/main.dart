@@ -10,6 +10,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_app/view_adapter_widget.dart';
 
 export 'dart:ui' show AppLifecycleState, Locale;
 
@@ -205,9 +206,7 @@ class TestState extends State<Test> {
       InnerDragGestureRecognizer:
           GestureRecognizerFactoryWithHandlers<InnerDragGestureRecognizer>(
         () => InnerDragGestureRecognizer(),
-        (InnerDragGestureRecognizer instance) {
-          instance..onDown = onHorizontalDragDown;
-        },
+        (InnerDragGestureRecognizer instance) {},
       ),
     };
 
@@ -215,12 +214,10 @@ class TestState extends State<Test> {
       gestures: _gestureRecognizers,
       child: Container(
         height: 100,
-        child: Text("SDfafadsfadsfasdf"),
+        child: ViewAdapterWidget(Text("SDfafadsfadsfasdf")),
       ),
     );
   }
-
-  void onHorizontalDragDown(DragDownDetails details) {}
 }
 
 class InnerDragGestureRecognizer extends DragGestureRecognizer {
@@ -233,22 +230,19 @@ class InnerDragGestureRecognizer extends DragGestureRecognizer {
     super.addPointer(event);
   }
 
-  Size offset = new Size(0, 0);
+  Offset offset;
 
   @override
   void handleEvent(PointerEvent event) {
-    print("handleEvent   " + event.toString());
     if (event is PointerDownEvent) {
-      offset = new Size(0, 0);
+      offset = Offset.zero;
+      print("handleEvent  PointerDownEvent  " + offset.toString());
     } else if (event is PointerMoveEvent) {
       offset += event.delta;
-      print("handleEvent  PointerMoveEvent " +
-          event.toString() +
-          "      " +
-          offset.height.toString());
-      if (offset.height > 18.0) {
-        resolve(GestureDisposition.accepted);
-      }
+      print("handleEvent  PointerMoveEvent " + offset.toString());
+//      if (offset.dy.abs() > 18.0) {
+//        resolve(GestureDisposition.accepted);
+//      }
     }
 
     super.handleEvent(event);
@@ -271,26 +265,31 @@ class InnerWidgetsFlutterBinding extends BindingBase
     return WidgetsBinding.instance;
   }
 
+
+  final double designWidth = 350;
+
   @override
   ViewConfiguration createViewConfiguration() {
-    final double designWidth = 350;
     final double devicePixelRatio = ui.window.physicalSize.width / designWidth;
-
+    return ViewConfiguration(
+      size: ui.window.physicalSize,
+      devicePixelRatio: devicePixelRatio,
+    );
 //    final double designHeight = 600;
 //    final double devicePixelRatio =
 //        ui.window.physicalSize.height / designHeight;
 
-    Size defaultSize = ui.window.physicalSize / devicePixelRatio;
-    print("createViewConfiguration" +
-        ui.window.physicalSize.width.toString() +
-        "    " +
-        ui.window.devicePixelRatio.toString() +
-        "   " +
-        defaultSize.toString());
+//    Size defaultSize = ui.window.physicalSize / devicePixelRatio;
+//    print("createViewConfiguration" +
+//        ui.window.physicalSize.width.toString() +
+//        "    " +
+//        ui.window.devicePixelRatio.toString() +
+//        "   " +
+//        defaultSize.toString());
 
     return ViewConfiguration(
-      size: defaultSize,
-      devicePixelRatio: devicePixelRatio,
+      size: ui.window.physicalSize / ui.window.devicePixelRatio,
+      devicePixelRatio: ui.window.devicePixelRatio,
     );
   }
 
@@ -298,5 +297,12 @@ class InnerWidgetsFlutterBinding extends BindingBase
   void handleEvent(PointerEvent event, HitTestEntry entry) {
     print("handleEventhandleEvent   " + event.toString());
     super.handleEvent(event, entry);
+  }
+
+  @override
+  void dispatchEvent(PointerEvent event, HitTestResult result) {
+    super.dispatchEvent(event, result);
+    print("handleEventhandleEvent dispatchEventdispatchEvent  " + event.toString());
+
   }
 }
