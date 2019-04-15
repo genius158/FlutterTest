@@ -14,4 +14,4 @@ For help getting started with Flutter, view our online
 <br/>
 1080*1920
 <br/>
-<img src="https://github.com/genius158/FlutterTest/blob/master/bitmap/screenadapter1.png" width="1080" height="1920" alt="1080*1920" align=center>
+<img src="https://github.com/genius158/FlutterTest/blob/master/bitmap/screenadapter2.png" width="320" height="568" alt="1080*1920" align=center>
