@@ -260,6 +260,11 @@ class InnerWidgetsFlutterBinding extends WidgetsFlutterBinding {
     );
   }
 
+  ///
+  /// 以下一大重写与 GestureBinding
+  /// 唯一目的 把 _handlePointerDataPacket 方法 事件原始数据转换 改用
+  /// 修改过的 PixelRatio
+
   @override
   void initInstances() {
     super.initInstances();
@@ -275,8 +280,10 @@ class InnerWidgetsFlutterBinding extends WidgetsFlutterBinding {
   final Queue<PointerEvent> _pendingPointerEvents = Queue<PointerEvent>();
 
   void _handlePointerDataPacket(ui.PointerDataPacket packet) {
-    _pendingPointerEvents
-        .addAll(PointerEventConverter.expand(packet.data, getAdapterRatio()));
+    _pendingPointerEvents.addAll(PointerEventConverter.expand(
+        packet.data,
+        // 适配事件的转换比率,采用我们修改的
+        getAdapterRatio()));
     if (!locked) _flushPointerEventQueue();
   }
 
