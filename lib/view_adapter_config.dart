@@ -1,7 +1,7 @@
 import 'package:flutter/rendering.dart';
 import 'dart:ui' as ui show window;
 
-const Size SCREEN_ADAPTER_SIZE = Size(360, 640);
+const Size SCREEN_ADAPTER_SIZE = Size(360, 600);
 
 double getAdapterRatio() {
   return ui.window.physicalSize.height / SCREEN_ADAPTER_SIZE.height;
