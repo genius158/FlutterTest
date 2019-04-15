@@ -1,27 +1,33 @@
+import 'package:flutter_app/view_adapter_config.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui show window;
 
 import 'package:flutter/rendering.dart';
+import 'dart:ui' as ui show window;
 
+///
+/// use like
+/// Container(
+///          height: 100,
+///          child: ViewAdapterWidget(
+///            Text("test"),
+///          ),
+///        )
+///
 class ViewAdapterWidget extends StatelessWidget {
-  Size _screenAdapterSize = Size(360, 640);
-
   Widget _child;
 
   ViewAdapterWidget(this._child);
 
   @override
   Widget build(BuildContext context) {
-    return new AdapterRenderObjectWidget(_screenAdapterSize, _child);
+    return new AdapterRenderObjectWidget(_child);
   }
 }
 
 class AdapterRenderObjectWidget extends SingleChildRenderObjectWidget {
-  Size _screenAdapterSize;
   Widget _child;
 
-  AdapterRenderObjectWidget(this._screenAdapterSize, this._child)
-      : super(child: _child);
+  AdapterRenderObjectWidget(this._child) : super(child: _child);
 
   @override
   SingleChildRenderObjectElement createElement() {
@@ -30,13 +36,15 @@ class AdapterRenderObjectWidget extends SingleChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return new AdapterRenderBox(this._screenAdapterSize);
+    return new AdapterRenderBox();
   }
 }
 
 class AdapterRenderBox extends RenderShiftedBox {
-  AdapterRenderBox(
-    this._screenAdapterSize, {
+  final Size _windowSize = ui.window.physicalSize / ui.window.devicePixelRatio;
+  BoxConstraints _innerConstraints;
+
+  AdapterRenderBox({
     RenderBox child,
   }) : super(child);
 
@@ -86,32 +94,15 @@ class AdapterRenderBox extends RenderShiftedBox {
     }
   }
 
-  @override
-  void visitChildren(visitor) {
-    print("visitChildren      ");
-    super.visitChildren(visitor);
-  }
-
-  @override
-  // TODO: implement constraints
-  BoxConstraints get constraints => adapterConstraints();
-
-  final Size _windowSize = ui.window.physicalSize / ui.window.devicePixelRatio;
-  Size _screenAdapterSize;
-  BoxConstraints _innerConstraints;
-
   BoxConstraints reset(BoxConstraints constraints) {
-    print("reset   " + constraints.toString());
-
-    double widthRatio = _windowSize.width / _screenAdapterSize.width;
-    double minWidth = constraints.minWidth * widthRatio;
+    double ratio = getAdapterRatioRatio();
+    double minWidth = constraints.minWidth * ratio;
     minWidth = minWidth > _windowSize.width ? _windowSize.width : minWidth;
-    double maxWidth = constraints.maxWidth * widthRatio;
+    double maxWidth = constraints.maxWidth * ratio;
     maxWidth = maxWidth > _windowSize.width ? _windowSize.width : maxWidth;
-    double heightRatio = _windowSize.height / _screenAdapterSize.height;
-    double minHeight = constraints.minHeight * heightRatio;
+    double minHeight = constraints.minHeight * ratio;
     minHeight = minHeight > _windowSize.height ? _windowSize.height : minHeight;
-    double maxHeight = constraints.maxHeight * heightRatio;
+    double maxHeight = constraints.maxHeight * ratio;
     maxHeight = maxHeight > _windowSize.height ? _windowSize.height : maxHeight;
 
     if (_innerConstraints != null &&
@@ -119,8 +110,6 @@ class AdapterRenderBox extends RenderShiftedBox {
         _innerConstraints.maxWidth == maxWidth &&
         _innerConstraints.minHeight == minHeight &&
         _innerConstraints.maxHeight == maxHeight) {
-      print("reset2222   " + _innerConstraints.toString());
-
       return _innerConstraints;
     }
 
@@ -129,10 +118,11 @@ class AdapterRenderBox extends RenderShiftedBox {
         maxWidth: maxWidth,
         minHeight: minHeight,
         maxHeight: maxHeight);
-    print("reset33333  " + _innerConstraints.toString());
-
     return _innerConstraints;
   }
+
+  @override
+  BoxConstraints get constraints => adapterConstraints();
 
   adapterConstraints() {
     return reset(super.constraints);

@@ -1,25 +1,14 @@
-/// 全局view 的大小适配
-
+/// 滑动监听
+/// 事件拦截
 import 'package:flutter/material.dart';
-
-import 'dart:async';
-import 'dart:ui' as ui show window;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'dart:collection';
-import 'dart:ui' as ui show window, PointerDataPacket;
-
-import 'package:flutter_app/view_adapter_config.dart';
 
 export 'dart:ui' show AppLifecycleState, Locale;
 
-void main() => InnerWidgetsFlutterBinding.ensureInitialized()
-  ..attachRootWidget(new MyApp())
-  ..scheduleWarmUpFrame();
+void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -183,91 +172,71 @@ class Test extends StatefulWidget {
 
 class TestState extends State<Test> {
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    ScrollPosition position = Scrollable.of(context)?.position;
+    position?.isScrollingNotifier?.addListener(() {
+      print("didChangeDependencies1111" +
+          position?.isScrollingNotifier?.value.toString() +
+          "  " +
+          position?.pixels.toString());
+    });
+    position?.addListener(() {
+      print("didChangeDependencies2222" +
+          position?.isScrollingNotifier?.value.toString() +
+          "  " +
+          position?.pixels.toString());
+    });
+  }
+
+  Map<Type, GestureRecognizerFactory> _gestureRecognizers =
+      const <Type, GestureRecognizerFactory>{};
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10),
-      child: IconButton(icon: Icon(Icons.access_alarm), onPressed: () {}),
+    _gestureRecognizers = <Type, GestureRecognizerFactory>{
+      InnerDragGestureRecognizer:
+          GestureRecognizerFactoryWithHandlers<InnerDragGestureRecognizer>(
+        () => InnerDragGestureRecognizer(),
+        (InnerDragGestureRecognizer instance) {},
+      ),
+    };
+
+    return RawGestureDetector(
+      gestures: _gestureRecognizers,
+      child: Container(
+        height: 100,
+        child: Text("SDfafadsfadsfasdf"),
+      ),
     );
   }
 }
 
-class InnerWidgetsFlutterBinding extends BindingBase
-    with
-        GestureBinding,
-        ServicesBinding,
-        SchedulerBinding,
-        PaintingBinding,
-        SemanticsBinding,
-        RendererBinding,
-        WidgetsBinding {
-  static WidgetsBinding ensureInitialized() {
-    if (WidgetsBinding.instance == null) InnerWidgetsFlutterBinding();
-    return WidgetsBinding.instance;
-  }
+class InnerDragGestureRecognizer extends DragGestureRecognizer {
+  @override
+  String get debugDescription => "test";
 
   @override
-  ViewConfiguration createViewConfiguration() {
-    final double devicePixelRatio = getAdapterRatio();
-    return ViewConfiguration(
-      size: ui.window.physicalSize / devicePixelRatio,
-      devicePixelRatio: devicePixelRatio,
-    );
+  void addPointer(PointerEvent event) {
+    print("handleEvent   addPointer    " + event.toString());
+    super.addPointer(event);
   }
+
+  Offset offset;
 
   @override
-  void initInstances() {
-    super.initInstances();
-    ui.window.onPointerDataPacket = _handlePointerDataPacket;
-  }
-
-  @override
-  void unlocked() {
-    super.unlocked();
-    _flushPointerEventQueue();
-  }
-
-  final Queue<PointerEvent> _pendingPointerEvents = Queue<PointerEvent>();
-
-  void _handlePointerDataPacket(ui.PointerDataPacket packet) {
-    _pendingPointerEvents
-        .addAll(PointerEventConverter.expand(packet.data, getAdapterRatio()));
-    if (!locked) _flushPointerEventQueue();
-  }
-
-  @override
-  void cancelPointer(int pointer) {
-    if (_pendingPointerEvents.isEmpty && !locked)
-      scheduleMicrotask(_flushPointerEventQueue);
-    _pendingPointerEvents.addFirst(PointerCancelEvent(pointer: pointer));
-  }
-
-  void _flushPointerEventQueue() {
-    assert(!locked);
-    while (_pendingPointerEvents.isNotEmpty)
-      _handlePointerEvent(_pendingPointerEvents.removeFirst());
-  }
-
-  final Map<int, HitTestResult> _hitTests = <int, HitTestResult>{};
-
-  void _handlePointerEvent(PointerEvent event) {
-    assert(!locked);
-    HitTestResult result;
+  void handleEvent(PointerEvent event) {
     if (event is PointerDownEvent) {
-      assert(!_hitTests.containsKey(event.pointer));
-      result = HitTestResult();
-      hitTest(result, event.position);
-      _hitTests[event.pointer] = result;
-      assert(() {
-        if (debugPrintHitTestResults) debugPrint('$event: $result');
-        return true;
-      }());
-    } else if (event is PointerUpEvent || event is PointerCancelEvent) {
-      result = _hitTests.remove(event.pointer);
-    } else if (event.down) {
-      result = _hitTests[event.pointer];
-    } else {
-      return; // We currently ignore add, remove, and hover move events.
+      offset = Offset.zero;
+      print("handleEvent  PointerDownEvent  " + offset.toString());
+    } else if (event is PointerMoveEvent) {
+      offset += event.delta;
+      print("handleEvent  PointerMoveEvent " + offset.toString());
+//      if (offset.dy.abs() > 18.0) {
+//        resolve(GestureDisposition.accepted);
+//      }
     }
-    if (result != null) dispatchEvent(event, result);
+
+    super.handleEvent(event);
   }
 }

@@ -1,25 +1,13 @@
-/// 全局view 的大小适配
-
-import 'package:flutter/material.dart';
-
-import 'dart:async';
-import 'dart:ui' as ui show window;
+/// 单个view 的大小适配
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'dart:collection';
-import 'dart:ui' as ui show window, PointerDataPacket;
 
-import 'package:flutter_app/view_adapter_config.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app/view_adapter_widget.dart';
 
 export 'dart:ui' show AppLifecycleState, Locale;
 
-void main() => InnerWidgetsFlutterBinding.ensureInitialized()
-  ..attachRootWidget(new MyApp())
-  ..scheduleWarmUpFrame();
+void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -184,90 +172,13 @@ class Test extends StatefulWidget {
 class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10),
-      child: IconButton(icon: Icon(Icons.access_alarm), onPressed: () {}),
-    );
-  }
-}
-
-class InnerWidgetsFlutterBinding extends BindingBase
-    with
-        GestureBinding,
-        ServicesBinding,
-        SchedulerBinding,
-        PaintingBinding,
-        SemanticsBinding,
-        RendererBinding,
-        WidgetsBinding {
-  static WidgetsBinding ensureInitialized() {
-    if (WidgetsBinding.instance == null) InnerWidgetsFlutterBinding();
-    return WidgetsBinding.instance;
-  }
-
-  @override
-  ViewConfiguration createViewConfiguration() {
-    final double devicePixelRatio = getAdapterRatio();
-    return ViewConfiguration(
-      size: ui.window.physicalSize / devicePixelRatio,
-      devicePixelRatio: devicePixelRatio,
-    );
-  }
-
-  @override
-  void initInstances() {
-    super.initInstances();
-    ui.window.onPointerDataPacket = _handlePointerDataPacket;
-  }
-
-  @override
-  void unlocked() {
-    super.unlocked();
-    _flushPointerEventQueue();
-  }
-
-  final Queue<PointerEvent> _pendingPointerEvents = Queue<PointerEvent>();
-
-  void _handlePointerDataPacket(ui.PointerDataPacket packet) {
-    _pendingPointerEvents
-        .addAll(PointerEventConverter.expand(packet.data, getAdapterRatio()));
-    if (!locked) _flushPointerEventQueue();
-  }
-
-  @override
-  void cancelPointer(int pointer) {
-    if (_pendingPointerEvents.isEmpty && !locked)
-      scheduleMicrotask(_flushPointerEventQueue);
-    _pendingPointerEvents.addFirst(PointerCancelEvent(pointer: pointer));
-  }
-
-  void _flushPointerEventQueue() {
-    assert(!locked);
-    while (_pendingPointerEvents.isNotEmpty)
-      _handlePointerEvent(_pendingPointerEvents.removeFirst());
-  }
-
-  final Map<int, HitTestResult> _hitTests = <int, HitTestResult>{};
-
-  void _handlePointerEvent(PointerEvent event) {
-    assert(!locked);
-    HitTestResult result;
-    if (event is PointerDownEvent) {
-      assert(!_hitTests.containsKey(event.pointer));
-      result = HitTestResult();
-      hitTest(result, event.position);
-      _hitTests[event.pointer] = result;
-      assert(() {
-        if (debugPrintHitTestResults) debugPrint('$event: $result');
-        return true;
-      }());
-    } else if (event is PointerUpEvent || event is PointerCancelEvent) {
-      result = _hitTests.remove(event.pointer);
-    } else if (event.down) {
-      result = _hitTests[event.pointer];
-    } else {
-      return; // We currently ignore add, remove, and hover move events.
-    }
-    if (result != null) dispatchEvent(event, result);
+    return InkWell(
+        onTap: () {},
+        child: Container(
+          height: 100,
+          child: ViewAdapterWidget(
+            Text("test"),
+          ),
+        ));
   }
 }
