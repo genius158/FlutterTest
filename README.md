@@ -10,7 +10,7 @@
 <br/>
 <img src="https://github.com/genius158/FlutterTest/blob/master/bitmap/screenadapter2.png" width="320" height="568" alt="1080x1920" align=center>
 
-# 原理
+# 原理 （具体代码 [main](https://github.com/genius158/FlutterTest/blob/master/lib/main.dart)）
 1.更改配置的 ViewConfiguration 的size和devicePixelRatio (ViewConfiguration 这个类再 RenderView 里赋值,而RenderView是
 renderObject树的根，在布局和绘制的过程中，会根据ViewConfiguration的值来做由父向子的布局绘制操作)
 <br/>
