@@ -1,4 +1,4 @@
-# 屏幕适配 demo [main](https://github.com/genius158/FlutterTest/blob/master/lib/main.dart)
+# flutter 屏幕适配 demo [main](https://github.com/genius158/FlutterTest/blob/master/lib/main.dart)
 一种一劳永逸的全局适配方式
 
 ## 效果
