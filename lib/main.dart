@@ -184,22 +184,14 @@ class Test extends StatefulWidget {
 class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(10),
-      child: IconButton(icon: Icon(Icons.access_alarm), onPressed: () {}),
+    return MaterialButton(
+      child: Text("test"),
+      onPressed: () {},
     );
   }
 }
 
-class InnerWidgetsFlutterBinding extends BindingBase
-    with
-        GestureBinding,
-        ServicesBinding,
-        SchedulerBinding,
-        PaintingBinding,
-        SemanticsBinding,
-        RendererBinding,
-        WidgetsBinding {
+class InnerWidgetsFlutterBinding extends WidgetsFlutterBinding {
   static WidgetsBinding ensureInitialized() {
     if (WidgetsBinding.instance == null) InnerWidgetsFlutterBinding();
     return WidgetsBinding.instance;
