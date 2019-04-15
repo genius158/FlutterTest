@@ -19,6 +19,14 @@ void main() => InnerWidgetsFlutterBinding.ensureInitialized()
   ..attachRootWidget(new MyApp())
   ..scheduleWarmUpFrame();
 
+//waitShow() async {
+//  await Future.delayed(Duration(milliseconds: 5000)).then((_) {
+//    InnerWidgetsFlutterBinding.ensureInitialized()
+//      ..attachRootWidget(new MyApp())
+//      ..scheduleWarmUpFrame();
+//  });
+//}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -183,9 +191,58 @@ class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      child: Text("test"),
-      onPressed: () {},
-    );
+        padding: EdgeInsets.all(0),
+        onPressed: () {
+          Navigator.push(context, new MaterialPageRoute(builder: (_) {
+            return MyHomePage(
+              title: "test",
+            );
+          }));
+        },
+        child: InnerContainer(
+          Row(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(0),
+                width: 250,
+                height: 40,
+                color: Colors.amber,
+                child: Text("width 250dp"),
+              ),
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(0),
+                height: 40,
+                width: 150,
+                color: Colors.lightBlue,
+                child: Text("150dp"),
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+class InnerContainer extends SingleChildRenderObjectWidget {
+  InnerContainer(_widget) : super(child: _widget);
+
+  @override
+  RenderObject createRenderObject(BuildContext context) {
+    return RenderInner();
+  }
+}
+
+class RenderInner extends RenderPadding {
+  RenderInner() : super(padding: EdgeInsets.all(0));
+
+  @override
+  // TODO: implement size
+  Size get size => printSize();
+
+  printSize() {
+    print("printSize    " + super.size.toString());
+    return super.size;
   }
 }
 
@@ -197,10 +254,9 @@ class InnerWidgetsFlutterBinding extends WidgetsFlutterBinding {
 
   @override
   ViewConfiguration createViewConfiguration() {
-    final double devicePixelRatio = getAdapterRatio();
     return ViewConfiguration(
-      size: ui.window.physicalSize / devicePixelRatio,
-      devicePixelRatio: devicePixelRatio,
+      size: getScreenAdapterSize(),
+      devicePixelRatio: getAdapterRatio(),
     );
   }
 
