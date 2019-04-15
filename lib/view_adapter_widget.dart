@@ -124,6 +124,9 @@ class AdapterRenderBox extends RenderShiftedBox {
   @override
   BoxConstraints get constraints => adapterConstraints();
 
+  @override
+  Rect get paintBounds => Offset.zero & (size * getAdapterRatio());
+
   adapterConstraints() {
     return reset(super.constraints);
   }
