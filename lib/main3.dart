@@ -232,9 +232,9 @@ class InnerDragGestureRecognizer extends DragGestureRecognizer {
     } else if (event is PointerMoveEvent) {
       offset += event.delta;
       print("handleEvent  PointerMoveEvent " + offset.toString());
-//      if (offset.dy.abs() > 18.0) {
-//        resolve(GestureDisposition.accepted);
-//      }
+      if (offset.dy > 18.0) {
+        resolve(GestureDisposition.accepted);
+      }
     }
 
     super.handleEvent(event);
