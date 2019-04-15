@@ -212,15 +212,9 @@ class TestState extends State<Test> {
   }
 }
 
-class InnerDragGestureRecognizer extends DragGestureRecognizer {
+class InnerDragGestureRecognizer extends TapGestureRecognizer {
   @override
-  String get debugDescription => "test";
-
-  @override
-  void addPointer(PointerEvent event) {
-    print("handleEvent   addPointer    " + event.toString());
-    super.addPointer(event);
-  }
+  String get debugDescription => "InnerDrag";
 
   Offset offset;
 
@@ -232,11 +226,11 @@ class InnerDragGestureRecognizer extends DragGestureRecognizer {
     } else if (event is PointerMoveEvent) {
       offset += event.delta;
       print("handleEvent  PointerMoveEvent " + offset.toString());
-      if (offset.dy > 18.0) {
+      if (offset.dy > kTouchSlop) {
         resolve(GestureDisposition.accepted);
       }
+    } else if (event is PointerCancelEvent || event is PointerUpEvent) {
+      rejectGesture(event.pointer);
     }
-
-    super.handleEvent(event);
   }
 }
