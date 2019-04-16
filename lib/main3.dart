@@ -230,7 +230,10 @@ class InnerDragGestureRecognizer extends TapGestureRecognizer {
         resolve(GestureDisposition.accepted);
       }
     } else if (event is PointerCancelEvent || event is PointerUpEvent) {
-      rejectGesture(event.pointer);
+      super.rejectGesture(event.pointer);
     }
+  }
+  @override
+  void rejectGesture(int pointer) {
   }
 }
