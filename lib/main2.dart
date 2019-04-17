@@ -3,7 +3,8 @@
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/view_adapter_widget.dart';
+import 'package:flutter_app/view_adapter_config.dart';
+import 'package:flutter_app/view_adapter_container.dart';
 
 export 'dart:ui' show AppLifecycleState, Locale;
 
@@ -11,7 +12,7 @@ void main() => runApp(new MyApp());
 //void main() => waitShow();
 
 waitShow() async {
-  await Future.delayed(Duration(milliseconds: 5000)).then((_) {
+  await Future.delayed(Duration(milliseconds: 4000)).then((_) {
     runApp(new MyApp());
   });
 }
@@ -183,22 +184,20 @@ class TestState extends State<Test> {
       onTap: () {},
       child: Row(
         children: <Widget>[
-          Container(
-              width: 250,
-              height: 40,
-              child: ViewAdapterWidget(Container(
-                alignment: Alignment.center,
-                color: Colors.amber,
-                child: Text("250dp"),
-              ))),
-          Container(
+          AdapterContainer(
+            width: 240,
+            margin: EdgeInsets.only(left: 10),
             height: 40,
-            width: 150,
-            child: ViewAdapterWidget(Container(
-              alignment: Alignment.center,
-              color: Colors.lightBlue,
-              child: Text("150dp"),
-            )),
+            alignment: Alignment.center,
+            color: Colors.amber,
+            child: Text("240dp  margin left 10dp"),
+          ),
+          AdapterContainer(
+            width: SCREEN_WIDTH - 250,
+            height: 40,
+            alignment: Alignment.center,
+            color: Colors.lightBlue,
+            child: Text("${SCREEN_WIDTH - 250}dp"),
           ),
         ],
       ),

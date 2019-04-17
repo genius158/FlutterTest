@@ -12,10 +12,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bde47d1-36ca-42b3-a5f2-d0ea8e4d7537" name="Default" comment="通用拦截">
+    <list default="true" id="6bde47d1-36ca-42b3-a5f2-d0ea8e4d7537" name="Default" comment="单个view 适配大小">
+      <change afterPath="$PROJECT_DIR$/lib/view_adapter_container.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main2.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/view_adapter_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/view_adapter_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/view_adapter_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/view_adapter_config.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/view_adapter_widget.dart" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -47,23 +50,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="5530" />
+          <entry key="dart" value="6172" />
           <entry key="md" value="717" />
-          <entry key="txt" value="162" />
+          <entry key="txt" value="173" />
           <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="5530" />
+          <entry key="Dart" value="6172" />
           <entry key="Markdown" value="717" />
-          <entry key="PLAIN_TEXT" value="162" />
+          <entry key="PLAIN_TEXT" value="173" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="493" />
+          <entry key="dart" value="503" />
           <entry key="gitignore" value="1" />
           <entry key="gradle" value="1" />
           <entry key="java" value="1" />
@@ -74,7 +77,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="493" />
+          <entry key="Dart" value="503" />
           <entry key="Groovy" value="1" />
           <entry key="JAVA" value="1" />
           <entry key="Markdown" value="5" />
@@ -87,10 +90,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/view_adapter_widget.dart">
+        <entry file="file://$PROJECT_DIR$/lib/view_adapter_config.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            <state relative-caret-position="189">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/main3.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="236" column="35" selection-start-line="236" selection-start-column="35" selection-end-line="236" selection-end-column="35" />
+              <folding>
+                <element signature="e#18#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/view_adapter_container.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -101,17 +128,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/shifted_box.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="1111" column="55" selection-start-line="1111" selection-start-column="55" selection-end-line="1111" selection-end-column="55" />
+            <state relative-caret-position="215">
+              <caret line="1109" column="20" selection-start-line="1109" selection-start-column="20" selection-end-line="1109" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/material/app_bar.dart">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/basic.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state relative-caret-position="146">
+              <caret line="1887" column="22" selection-start-line="1887" selection-start-column="8" selection-end-line="1887" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -119,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main2.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-1744">
+              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
               <folding>
                 <element signature="e#18#59#0" expanded="true" />
               </folding>
@@ -129,55 +165,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/framework.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="1642" column="44" selection-start-line="1642" selection-start-column="15" selection-end-line="1642" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/box.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/container.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-464">
-              <caret line="344" column="9" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+            <state relative-caret-position="131">
+              <caret line="332" column="16" selection-start-line="332" selection-start-column="16" selection-end-line="332" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/basic.dart">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/painting/edge_insets.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="1624" column="30" selection-start-line="1624" selection-start-column="30" selection-end-line="1624" selection-end-column="30" />
+            <state relative-caret-position="500">
+              <caret line="344" column="19" selection-start-line="344" selection-start-column="19" selection-end-line="344" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.0.8/lib/src/vector_math_64/matrix4.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/object.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1394">
-              <caret line="1669" column="11" selection-start-line="1669" selection-start-column="11" selection-end-line="1669" selection-end-column="11" />
+            <state relative-caret-position="126">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -186,9 +195,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>state</find>
-      <find>addRoute</find>
-      <find>_pendingPointerEvents</find>
       <find>result</find>
       <find>_path</find>
       <find>offset</find>
@@ -208,14 +214,17 @@
       <find>padding</find>
       <find>r</find>
       <find>datum</find>
-      <find>constraints</find>
       <find>child</find>
       <find>_maxWidth</find>
       <find>parentUsesSize</find>
       <find>additionalConstraints</find>
       <find>_additionalConstraints</find>
       <find>createRenderObject</find>
+      <find>_getSize</find>
       <find>size</find>
+      <find>getSize</find>
+      <find>constraints</find>
+      <find>_paddingIncludingDecoration</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -226,12 +235,13 @@
       <list>
         <option value="$PROJECT_DIR$/flutter_study/pubspec.yaml" />
         <option value="$PROJECT_DIR$/android/app/src/main/java/com/example/flutterapp/ViewAdapterWidget.java" />
-        <option value="$PROJECT_DIR$/lib/view_adapter_config.dart" />
-        <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/main3.dart" />
-        <option value="$PROJECT_DIR$/lib/main2.dart" />
+        <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/view_adapter_config.dart" />
         <option value="$PROJECT_DIR$/lib/view_adapter_widget.dart" />
+        <option value="$PROJECT_DIR$/lib/main2.dart" />
+        <option value="$PROJECT_DIR$/lib/view_adapter_container.dart" />
       </list>
     </option>
   </component>
@@ -509,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555379985351</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="单个view 适配大小">
+      <created>1555474937105</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1555474937105</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -524,7 +541,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="765" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.38263667" visible="true" weight="0.18731989" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.38263667" visible="true" weight="0.15850145" />
       <window_info id="Structure" order="1" sideWeight="0.50117093" side_tool="true" weight="0.15489914" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -536,16 +553,16 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985591" weight="0.21253823" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4776657" weight="0.37003058" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.37103745" visible="true" weight="0.30122325" />
       <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49927953" weight="0.32874617" />
-      <window_info anchor="bottom" id="Dart Analysis" order="6" weight="0.32568806" />
+      <window_info anchor="bottom" id="Dart Analysis" order="6" sideWeight="0.39409223" weight="0.32568806" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.17074928" side_tool="true" weight="0.43883792" />
-      <window_info anchor="bottom" id="Logcat" order="9" sideWeight="0.7939481" weight="0.3730887" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49711815" visible="true" weight="0.16055046" />
+      <window_info anchor="bottom" id="Logcat" order="9" sideWeight="0.7932277" weight="0.3730887" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49711815" weight="0.27217126" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4985591" weight="0.36085626" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32917318" />
-      <window_info active="true" anchor="bottom" id="Run" order="13" sideWeight="0.5028818" side_tool="true" visible="true" weight="0.16055046" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49927953" weight="0.4464832" />
+      <window_info active="true" anchor="bottom" id="Run" order="13" sideWeight="0.6289625" side_tool="true" visible="true" weight="0.30122325" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Buck" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -586,7 +603,8 @@
     <MESSAGE value="调整图片大小" />
     <MESSAGE value="update readme" />
     <MESSAGE value="通用拦截" />
-    <option name="LAST_COMMIT_MESSAGE" value="通用拦截" />
+    <MESSAGE value="单个view 适配大小" />
+    <option name="LAST_COMMIT_MESSAGE" value="单个view 适配大小" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -706,6 +724,11 @@
           <line>970</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/view_adapter_container.dart</url>
+          <line>61</line>
+          <option name="timeStamp" value="183" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -734,6 +757,26 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>effectivePadding * ratio</expression-string>
+        <language-id>Dart</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>constraints * getAdapterRatioRatio()</expression-string>
+        <language-id>Dart</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reset(constraints)</expression-string>
+        <language-id>Dart</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>offset * getAdapterRatioRatio()</expression-string>
+        <language-id>Dart</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>child.d</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -758,73 +801,9 @@
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>super.constraints</expression-string>
-        <language-id>Dart</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>event.delta.dy - lastEvent.delta.dy</expression-string>
-        <language-id>Dart</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>class  extends StatefulWidget {
-  @override
-  _State createState() =&gt; _State();
-}
-
-class _State extends State&lt;&gt; with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-
-  @override
-  void initState() {
-    _controller = AnimationController(vsync: this);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-  
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-tate.isOpen</expression-string>
-        <language-id>Dart</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>state.isOpen</expression-string>
-        <language-id>Dart</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>tate.isOpen</expression-string>
-        <language-id>Dart</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/gestures/pointer_router.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/bin/cache/pkg/sky_engine/lib/collection/queue.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="121" column="7" selection-start-line="121" selection-start-column="7" selection-end-line="121" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/custom_paint.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -864,13 +843,6 @@ tate.isOpen</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
           <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/material/material_button.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -982,16 +954,6 @@ tate.isOpen</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/view_adapter_config.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/gestures/tap.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4242">
@@ -1031,16 +993,6 @@ tate.isOpen</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="337" column="25" lean-forward="true" selection-start-line="337" selection-start-column="25" selection-end-line="337" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main3.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4935">
-          <caret line="236" column="35" selection-start-line="236" selection-start-column="35" selection-end-line="236" selection-end-column="35" />
-          <folding>
-            <element signature="e#18#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1090,16 +1042,6 @@ tate.isOpen</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="221" column="12" lean-forward="true" selection-start-line="202" selection-start-column="10" selection-end-line="221" selection-end-column="12" />
-          <folding>
-            <element signature="e#18#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/material/slider.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1114,24 +1056,10 @@ tate.isOpen</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/framework.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="1642" column="44" selection-start-line="1642" selection-start-column="15" selection-end-line="1642" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/basic.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="1624" column="30" selection-start-line="1624" selection-start-column="30" selection-end-line="1624" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1142,44 +1070,109 @@ tate.isOpen</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/shifted_box.dart">
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/material/material_button.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="1111" column="55" selection-start-line="1111" selection-start-column="55" selection-end-line="1111" selection-end-column="55" />
+        <state relative-caret-position="-59">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/box.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="145">
           <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-463">
+          <caret line="193" selection-start-line="193" selection-end-line="193" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.0.8/lib/src/vector_math_64/matrix4.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/basic.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="1887" column="22" selection-start-line="1887" selection-start-column="8" selection-end-line="1887" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/shifted_box.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="1109" column="20" selection-start-line="1109" selection-start-column="20" selection-end-line="1109" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="186" column="6" selection-start-line="186" selection-start-column="6" selection-end-line="186" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main3.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="236" column="35" selection-start-line="236" selection-start-column="35" selection-end-line="236" selection-end-column="35" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/painting/edge_insets.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="344" column="19" selection-start-line="344" selection-start-column="19" selection-end-line="344" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/container.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="332" column="16" selection-start-line="332" selection-start-column="16" selection-end-line="332" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main2.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="-1744">
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
           <folding>
             <element signature="e#18#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/view_adapter_widget.dart">
+    <entry file="file://$PROJECT_DIR$/lib/view_adapter_config.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state relative-caret-position="189">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/container.dart">
+    <entry file="file://$PROJECT_DIR$/lib/view_adapter_container.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="344" column="9" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+        <state relative-caret-position="143">
+          <caret line="52" column="74" selection-start-line="52" selection-start-column="74" selection-end-line="52" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

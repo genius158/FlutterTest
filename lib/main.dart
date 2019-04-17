@@ -190,9 +190,8 @@ class Test extends StatefulWidget {
 class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-        padding: EdgeInsets.all(0),
-        onPressed: () {
+    return GestureDetector(
+        onTap: () {
           Navigator.push(context, new MaterialPageRoute(builder: (_) {
             return MyHomePage(
               title: "test",
@@ -213,10 +212,10 @@ class TestState extends State<Test> {
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(0),
+                width: SCREEN_WIDTH - 250,
                 height: 40,
-                width: 150,
                 color: Colors.lightBlue,
-                child: Text("150dp"),
+                child: Text("${SCREEN_WIDTH - 250}dp"),
               ),
             ],
           ),
