@@ -30,104 +30,63 @@ class AdapterRenderObjectWidget extends SingleChildRenderObjectWidget {
   AdapterRenderObjectWidget(this._child) : super(child: _child);
 
   @override
-  SingleChildRenderObjectElement createElement() {
-    return super.createElement();
-  }
-
-  @override
   RenderObject createRenderObject(BuildContext context) {
     return new AdapterRenderBox();
   }
 }
 
-class AdapterRenderBox extends RenderShiftedBox {
-  final Size _windowSize = ui.window.physicalSize / ui.window.devicePixelRatio;
-  BoxConstraints _innerConstraints;
-
-  AdapterRenderBox({
-    RenderBox child,
-  }) : super(child);
-
-  Size _getSize(BoxConstraints constraints) {
-    return Size(constraints.constrainWidth(), constraints.constrainHeight());
+class InnerDelegate extends SingleChildLayoutDelegate {
+  @override
+  bool shouldRelayout(SingleChildLayoutDelegate oldDelegate) {
+    return this != oldDelegate;
   }
 
   @override
-  double computeMinIntrinsicWidth(double height) {
-    final double width =
-        _getSize(BoxConstraints.tightForFinite(height: height)).width;
-    if (width.isFinite) return width;
-    return 0.0;
+  BoxConstraints getConstraintsForChild(BoxConstraints constraints) {
+    return reset(constraints);
   }
 
   @override
-  double computeMaxIntrinsicWidth(double height) {
-    final double width =
-        _getSize(BoxConstraints.tightForFinite(height: height)).width;
-    if (width.isFinite) return width;
-    return 0.0;
+  Size getSize(BoxConstraints constraints) {
+    return reset(constraints).smallest;
   }
+}
+
+class AdapterRenderBox extends RenderCustomSingleChildLayoutBox {
+  AdapterRenderBox() : super(delegate: new InnerDelegate());
 
   @override
-  double computeMinIntrinsicHeight(double width) {
-    final double height =
-        _getSize(BoxConstraints.tightForFinite(width: width)).height;
-    if (height.isFinite) return height;
-    return 0.0;
+  void paint(PaintingContext context, Offset offset) {
+    super.paint(context, offset * getAdapterRatioRatio());
   }
+}
 
-  @override
-  double computeMaxIntrinsicHeight(double width) {
-    final double height =
-        _getSize(BoxConstraints.tightForFinite(width: width)).height;
-    if (height.isFinite) return height;
-    return 0.0;
-  }
+final Size _windowSize = ui.window.physicalSize / ui.window.devicePixelRatio;
+BoxConstraints _innerConstraints;
 
-  void performLayout() {
-    BoxConstraints tempConstraints = constraints;
-    size = _getSize(tempConstraints);
-    if (child != null) {
-      final BoxConstraints childConstraints = tempConstraints;
-      assert(childConstraints.debugAssertIsValid(isAppliedConstraint: true));
-      child.layout(childConstraints, parentUsesSize: !childConstraints.isTight);
-    }
-  }
+BoxConstraints reset(BoxConstraints constraints) {
+  double ratio = getAdapterRatioRatio();
+  double minWidth = constraints.minWidth * ratio;
+  minWidth = minWidth > _windowSize.width ? _windowSize.width : minWidth;
+  double maxWidth = constraints.maxWidth * ratio;
+  maxWidth = maxWidth > _windowSize.width ? _windowSize.width : maxWidth;
+  double minHeight = constraints.minHeight * ratio;
+  minHeight = minHeight > _windowSize.height ? _windowSize.height : minHeight;
+  double maxHeight = constraints.maxHeight * ratio;
+  maxHeight = maxHeight > _windowSize.height ? _windowSize.height : maxHeight;
 
-  BoxConstraints reset(BoxConstraints constraints) {
-    double ratio = getAdapterRatioRatio();
-    double minWidth = constraints.minWidth * ratio;
-    minWidth = minWidth > _windowSize.width ? _windowSize.width : minWidth;
-    double maxWidth = constraints.maxWidth * ratio;
-    maxWidth = maxWidth > _windowSize.width ? _windowSize.width : maxWidth;
-    double minHeight = constraints.minHeight * ratio;
-    minHeight = minHeight > _windowSize.height ? _windowSize.height : minHeight;
-    double maxHeight = constraints.maxHeight * ratio;
-    maxHeight = maxHeight > _windowSize.height ? _windowSize.height : maxHeight;
-
-    if (_innerConstraints != null &&
-        _innerConstraints.minWidth == minWidth &&
-        _innerConstraints.maxWidth == maxWidth &&
-        _innerConstraints.minHeight == minHeight &&
-        _innerConstraints.maxHeight == maxHeight) {
-      return _innerConstraints;
-    }
-
-    _innerConstraints = BoxConstraints(
-        minWidth: minWidth,
-        maxWidth: maxWidth,
-        minHeight: minHeight,
-        maxHeight: maxHeight);
+  if (_innerConstraints != null &&
+      _innerConstraints.minWidth == minWidth &&
+      _innerConstraints.maxWidth == maxWidth &&
+      _innerConstraints.minHeight == minHeight &&
+      _innerConstraints.maxHeight == maxHeight) {
     return _innerConstraints;
   }
 
-  @override
-  BoxConstraints get constraints => adapterConstraints();
-
-  @override
-  Rect get paintBounds => Offset.zero & (size * getAdapterRatio());
-
-  adapterConstraints() {
-    return reset(super.constraints);
-  }
+  _innerConstraints = BoxConstraints(
+      minWidth: minWidth,
+      maxWidth: maxWidth,
+      minHeight: minHeight,
+      maxHeight: maxHeight);
+  return _innerConstraints;
 }

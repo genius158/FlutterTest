@@ -8,6 +8,13 @@ import 'package:flutter_app/view_adapter_widget.dart';
 export 'dart:ui' show AppLifecycleState, Locale;
 
 void main() => runApp(new MyApp());
+//void main() => waitShow();
+
+waitShow() async {
+  await Future.delayed(Duration(milliseconds: 5000)).then((_) {
+    runApp(new MyApp());
+  });
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -173,12 +180,28 @@ class TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
-        child: Container(
-          height: 100,
-          child: ViewAdapterWidget(
-            Text("test"),
+      onTap: () {},
+      child: Row(
+        children: <Widget>[
+          Container(
+              width: 250,
+              height: 40,
+              child: ViewAdapterWidget(Container(
+                alignment: Alignment.center,
+                color: Colors.amber,
+                child: Text("250dp"),
+              ))),
+          Container(
+            height: 40,
+            width: 150,
+            child: ViewAdapterWidget(Container(
+              alignment: Alignment.center,
+              color: Colors.lightBlue,
+              child: Text("150dp"),
+            )),
           ),
-        ));
+        ],
+      ),
+    );
   }
 }
