@@ -182,6 +182,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: new Text(widget.title),
       ),
       body: ListView(
+        physics: new NoShark(),
         children: <Widget>[
           Test(),
           Test(),
@@ -264,6 +265,16 @@ class _MyHomePageState extends State<MyHomePage> {
       Test(),
     ];
   }
+}
+
+class NoShark extends ClampingScrollPhysics {
+  @override
+  ClampingScrollPhysics applyTo(ScrollPhysics ancestor) {
+    return new NoShark();
+  }
+
+  @override
+  double get dragStartDistanceMotionThreshold => 1;
 }
 
 class Test extends StatefulWidget {
