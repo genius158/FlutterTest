@@ -82,11 +82,11 @@ class CustomLayoutRender extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, CustomParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, CustomParentData> {
-  var innerPaint = new Paint();
+  var _innerPaint = new Paint();
 
   CustomLayoutRender({List<RenderBox> children, Color color}) {
     addAll(children);
-    innerPaint.color = color ?? Colors.transparent;
+    _innerPaint.color = color ?? Colors.transparent;
   }
 
   @override
@@ -101,7 +101,7 @@ class CustomLayoutRender extends RenderBox
   void paint(PaintingContext context, Offset offset) {
     context.canvas.drawRect(
         Rect.fromLTWH(offset.dx, offset.dy, size.width, size.height),
-        innerPaint);
+        _innerPaint);
     defaultPaint(context, offset);
   }
 
