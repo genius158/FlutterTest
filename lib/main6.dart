@@ -49,7 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: CustomLayout(getChildren()),
+      body: CustomLayout(getChildren()
+      ,color: Colors.lightBlue,),
     );
   }
 
