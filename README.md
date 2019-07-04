@@ -1,6 +1,12 @@
 # flutter 屏幕适配 demo [main](https://github.com/genius158/FlutterTest/blob/master/lib/main.dart)
 一种一劳永逸的全局适配方式
 
+### tip
+请不要适用MediaQuery.of(context)大小相关方法,默认MediaQuery适用的系统原本的大小，
+非用使用，需要重写MaterialApp，
+<br/>
+大小直接使用context.size,或者从size或者constraints获取
+
 ## 效果
 320x480
 <br/>
