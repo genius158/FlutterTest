@@ -49,8 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: CustomLayout(getChildren()
-      ,color: Colors.lightBlue,),
+      body: CustomLayout(
+        getChildren(),
+        color: Colors.lightBlue,
+      ),
     );
   }
 
@@ -77,6 +79,12 @@ class CustomLayout extends MultiChildRenderObjectWidget {
   }
 
   CustomLayout(List<Widget> children, {this.color}) : super(children: children);
+
+  @override
+  void updateRenderObject(
+      BuildContext context, CustomLayoutRender renderObject) {
+    renderObject.color = color;
+  }
 }
 
 class CustomLayoutRender extends RenderBox
@@ -84,6 +92,10 @@ class CustomLayoutRender extends RenderBox
         ContainerRenderObjectMixin<RenderBox, CustomParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, CustomParentData> {
   var _innerPaint = new Paint();
+
+  set color(Color color) {
+    _innerPaint.color = color;
+  }
 
   CustomLayoutRender({List<RenderBox> children, Color color}) {
     addAll(children);
