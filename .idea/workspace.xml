@@ -12,19 +12,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6bde47d1-36ca-42b3-a5f2-d0ea8e4d7537" name="Default" comment="no start to scroll shake">
-      <change afterPath="$PROJECT_DIR$/lib/main5.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/main6.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
+    <list default="true" id="6bde47d1-36ca-42b3-a5f2-d0ea8e4d7537" name="Default" comment="自定义layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main6.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main6.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -44,11 +35,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/main6.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="269">
+              <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
               <folding>
                 <element signature="e#23#64#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/bin/cache/pkg/sky_engine/lib/ui/painting.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="1127" column="6" selection-start-line="1127" selection-start-column="6" selection-end-line="1127" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -75,19 +75,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/bin/cache/pkg/sky_engine/lib/ui/geometry.dart">
+        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/framework.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="219" column="9" selection-start-line="219" selection-start-column="9" selection-end-line="219" selection-end-column="9" />
+            <state relative-caret-position="184">
+              <caret line="2795" column="7" selection-start-line="2795" selection-start-column="7" selection-end-line="2795" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/framework.dart">
+        <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="2131" column="7" selection-start-line="2131" selection-start-column="7" selection-end-line="2131" selection-end-column="7" />
+            <state relative-caret-position="317">
+              <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+              <folding>
+                <element signature="e#18#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/main2.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#18#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,8 +173,8 @@
       <find>overflow</find>
       <find>max</find>
       <find>_size</find>
-      <find>FlowParentData</find>
       <find>setstate</find>
+      <find>FlowParentData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,7 +192,6 @@
         <option value="$PROJECT_DIR$/android/local.properties" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/gestures/monodrag.dart" />
-        <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/main2.dart" />
         <option value="$PROJECT_DIR$/lib/main3.dart" />
         <option value="$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/navigator.dart" />
@@ -186,8 +200,9 @@
         <option value="$USER_HOME$/ExtraLibrary/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.1+2/android/src/main/java/io/flutter/plugins/videoplayer/VideoPlayerPlugin.java" />
         <option value="$PROJECT_DIR$/lib/main4.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/main6.dart" />
         <option value="$PROJECT_DIR$/lib/main5.dart" />
+        <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/main6.dart" />
       </list>
     </option>
   </component>
@@ -409,7 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flutter.main6.dart">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -652,7 +667,35 @@
       <option name="project" value="LOCAL" />
       <updated>1556616818981</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="自定义layout">
+      <created>1562213077770</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1562213077770</updated>
+    </task>
+    <task id="LOCAL-00025" summary="自定义layout">
+      <created>1562213137871</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1562213137871</updated>
+    </task>
+    <task id="LOCAL-00026" summary="自定义layout">
+      <created>1562213253570</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1562213253570</updated>
+    </task>
+    <task id="LOCAL-00027" summary="自定义layout">
+      <created>1562213387360</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1562213387360</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -668,7 +711,7 @@
     <frame x="0" y="23" width="1440" height="819" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.52899575" visible="true" weight="0.22262248" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.52899575" visible="true" weight="0.22262248" />
       <window_info id="Structure" order="1" sideWeight="0.50117093" side_tool="true" weight="0.15489914" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -681,7 +724,7 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4985591" weight="0.21253823" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.46397695" visible="true" weight="0.12429378" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.46397695" visible="true" weight="0.36723164" />
       <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49927953" weight="0.32874617" />
       <window_info anchor="bottom" id="Dart Analysis" order="6" sideWeight="0.39337176" weight="0.32568806" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
@@ -690,7 +733,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49711815" weight="0.27217126" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49567723" weight="0.033898305" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.2334294" weight="0.40536723" />
-      <window_info anchor="bottom" id="Run" order="13" sideWeight="0.5360231" side_tool="true" visible="true" weight="0.12429378" />
+      <window_info active="true" anchor="bottom" id="Run" order="13" sideWeight="0.5360231" side_tool="true" visible="true" weight="0.36723164" />
       <window_info anchor="bottom" id="Flutter Performance" order="14" side_tool="true" />
       <window_info anchor="bottom" id="Buck" order="15" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -731,7 +774,8 @@
     <MESSAGE value="单个view 适配大小" />
     <MESSAGE value="渲染流程" />
     <MESSAGE value="no start to scroll shake" />
-    <option name="LAST_COMMIT_MESSAGE" value="no start to scroll shake" />
+    <MESSAGE value="自定义layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="自定义layout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -838,7 +882,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>194</line>
+          <line>195</line>
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
@@ -1262,16 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3822">
-          <caret line="182" column="6" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
-          <folding>
-            <element signature="e#18#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.1+2/android/src/main/java/io/flutter/plugins/videoplayer/QueuingEventSink.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -1299,16 +1333,6 @@
           <folding>
             <element signature="e#0#6477#0" expanded="true" />
             <element signature="e#18#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main2.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3354">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#18#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1375,13 +1399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="2860" column="18" selection-start-line="2860" selection-start-column="18" selection-end-line="2860" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/bin/cache/pkg/sky_engine/lib/ui/painting.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="3169" column="20" selection-start-line="3169" selection-start-column="16" selection-end-line="3169" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1471,8 +1488,8 @@
     </entry>
     <entry file="file://$USER_HOME$/ExtraLibrary/flutter/packages/flutter/lib/src/widgets/framework.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="2131" column="7" selection-start-line="2131" selection-start-column="7" selection-end-line="2131" selection-end-column="7" />
+        <state relative-caret-position="184">
+          <caret line="2795" column="7" selection-start-line="2795" selection-start-column="7" selection-end-line="2795" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1486,10 +1503,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main2.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#18#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ExtraLibrary/flutter/bin/cache/pkg/sky_engine/lib/ui/painting.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="1127" column="6" selection-start-line="1127" selection-start-column="6" selection-end-line="1127" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main6.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="269">
+          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding>
             <element signature="e#23#64#0" expanded="true" />
           </folding>

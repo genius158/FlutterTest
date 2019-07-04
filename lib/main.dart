@@ -8,6 +8,7 @@ import 'dart:ui' as ui show window;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/main6.dart';
 import 'dart:collection';
 import 'dart:ui' as ui show window, PointerDataPacket;
 
@@ -198,28 +199,35 @@ class TestState extends State<Test> {
             );
           }));
         },
-        child: InnerContainer(
-          Row(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(0),
-                width: 250,
-                height: 40,
-                color: Colors.amber,
-                child: Text("width 250dp"),
+        child:
+        Column(
+          children: <Widget>[
+            InnerContainer(
+              Row(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(0),
+                    width: 250,
+                    height: 40,
+                    color: Colors.amber,
+                    child: Text("width 250dp"),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(0),
+                    width: SCREEN_WIDTH - 250,
+                    height: 40,
+                    color: Colors.lightBlue,
+                    child: Text("${SCREEN_WIDTH - 250}dp"),
+                  ),
+                ],
               ),
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(0),
-                width: SCREEN_WIDTH - 250,
-                height: 40,
-                color: Colors.lightBlue,
-                child: Text("${SCREEN_WIDTH - 250}dp"),
-              ),
-            ],
-          ),
-        ));
+            )
+            ,CustomLayout([Text("sd"),Text("sdfasdfsfasdfsdfasdf")])
+          ],
+        )
+        );
   }
 }
 

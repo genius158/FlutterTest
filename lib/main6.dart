@@ -65,7 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 200,
         alignment: Alignment.center,
       ),
-      Text("333333333333333333333")
+      Text("333333333333333333333"),
+      Text("444444444444"),
     ];
   }
 }
@@ -91,15 +92,17 @@ class CustomLayoutRender extends RenderBox
     with
         ContainerRenderObjectMixin<RenderBox, CustomParentData>,
         RenderBoxContainerDefaultsMixin<RenderBox, CustomParentData> {
-  var _innerPaint = new Paint();
+  var _innerPaint = new Paint()..color = Colors.transparent;
 
   set color(Color color) {
-    _innerPaint.color = color;
+    if (color != null) {
+      _innerPaint.color = color;
+    }
   }
 
   CustomLayoutRender({List<RenderBox> children, Color color}) {
     addAll(children);
-    _innerPaint.color = color ?? Colors.transparent;
+    this.color = color;
   }
 
   @override
@@ -153,6 +156,11 @@ class CustomLayoutRender extends RenderBox
           height: layoutHeight,
         )
         .biggest;
+
+    print("performLayout  " +
+        size.toString() +
+        "   " +
+        AnimationStatus.completed.toString());
   }
 }
 
