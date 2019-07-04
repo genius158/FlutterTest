@@ -40,4 +40,7 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="io.flutter" />
+  </component>
 </project>

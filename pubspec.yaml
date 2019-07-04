@@ -24,7 +24,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+#  video_player: ^0.10.1+2
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
